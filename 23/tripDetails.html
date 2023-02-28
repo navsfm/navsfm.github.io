@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width,user-scalable=yes">
+    <link rel="shortcut icon" type="image/png" href="../images/navsfm_favicon.png">
+    <link rel="stylesheet" type="text/css" href="../styles/base.css">
+    <link rel="stylesheet" type="text/css" href="../styles/23.css">
+    <title>NavsFM - Trip Details</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/vuetify@3.1.6/dist/vuetify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@3.1.6/dist/vuetify.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <v-app>
+        <v-app-bar rounded color="amber" dense>
+            <v-app-bar-title>{{ title }}</v-app-bar-title>
+            <template v-slot:prepend>
+                <v-app-bar-nav-icon @click="drawer = !drawer"><img src="../images/navsfm_logo.png" style="width:100%; height: auto;" alt="Menu Bar">
+                </v-app-bar-nav-icon>
+            </template>
+            <template v-slot:append>
+                <v-btn color="black" href="https://open.spotify.com/playlist/4hguY8a0ejffFXtB9U2eGm?si=3b3488f452ab41c3"
+                       target="_blank" style="text-decoration: none">Spotify
+                </v-btn>
+            </template>
+        </v-app-bar>
+        <v-navigation-drawer v-model="drawer" absolute temporary>
+            <v-sheet class="d-flex justify-center py-6" color="primary">
+                <a href="../index.html"><v-img src='../images/navsfm_logo.png' max-width="250" contain></v-img></a>
+            </v-sheet>
+            <v-list nav dense>
+                <v-list-item v-for="link in links" :key="link.title" :to="link.link">
+                    <v-list-item-title v-if="link.title !== title && isPast(link.time)"><a :href="link.link" style="text-decoration: none;">{{ link.title }}</a></v-list-item-title>
+                    <v-list-item-title v-else-if="isPast(link.time)">{{ link.title }}</v-list-item-title>
+                </v-list-item>
+            </v-list>
+        </v-navigation-drawer>
+    </v-app>
+</div>
+<script>
+    const {createApp} = Vue
+    const {createVuetify} = Vuetify
+
+    const vuetify = createVuetify()
+
+    createApp({
+        data() {
+            return {
+                drawer: false,
+                title: 'Trip Details',
+                links: [
+                    {title: '2023 Home', link: '../23/23index.html', time: new Date()},
+                    {title: 'Trip Details', link: '../23/tripDetails.html', time: new Date()},
+                    {title: 'Break the Ice', link: '../shared/breakTheIce.html', time: new Date()},
+                    {title: 'Car Games', link: '../shared/carGames.html', time: new Date()},
+                    {title: 'New Bern 1', link: '../23/down1.html', time: new Date()},
+                    {title: 'New Bern 2', link: '../23/down2.html', time: new Date('2023-03-04T12:00:00.000')},
+                    {title: 'New Bern 3', link: '../23/down3.html', time: new Date('2023-03-04T18:00:00.000')},
+                    {title: 'State College 1', link: '../23/up1.html', time: new Date('2023-03-14T10:00:00.000')},
+                    {title: 'State College 2', link: '../23/up2.html', time: new Date('2023-03-14T15:00:00.000')},
+                    {title: 'State College 3', link: '../23/up3.html', time: new Date('2023-03-14T20:00:00.000')},
+                ],
+            }
+        },
+        methods: {
+            isPast(time) {
+                return new Date() > time
+            }
+        }
+    }).use(vuetify).mount('#app')
+</script>
+</body>
+</html>

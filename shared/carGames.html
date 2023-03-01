@@ -23,7 +23,7 @@
             </template>
             <template v-slot:append>
                 <v-btn color="black" href="https://open.spotify.com/playlist/4hguY8a0ejffFXtB9U2eGm?si=3b3488f452ab41c3"
-                       target="_blank" style="text-decoration: none"><img src="../icons/spotify.svg" alt="Spotify Logo" style="max-height: 60px">Spotify
+                       target="_blank" style="text-decoration: none;" variant="outlined" :elevation="2">Spotify
                 </v-btn>
             </template>
         </v-app-bar>
@@ -41,12 +41,12 @@
             </v-list>
         </v-navigation-drawer>
         <v-main>
-            <br><br>
             <h2>Tic-Tac-Toe</h2>
             <p><a href="https://playtictactoe.org">Plat it here!</a></p>
             <v-divider></v-divider>
             <h2>License Plate Game</h2>
-            <p>Cooperative - Find a license plate from each state. Bonus points if you find them in alphabetical order.</p>
+            <p>Cooperative - Find a license plate from each state. Bonus points if you find them in alphabetical
+                order.</p>
             <p><a href="https://plategame.app/">Play it here!</a></p>
             <v-divider></v-divider>
             <h2>Alphabet Game</h2>
@@ -54,13 +54,17 @@
             <v-divider></v-divider>
             <h2>Cow Game</h2>
             <p>In this game, you count cows along your route.</p><br>
-            <p>As you pass a herd of cows, players will should "Those are my cows!" The first one to say it starts counting the cows.</p><br>
-            <p>Once the car passes the cow, it can no longer be counted. Whoever has the most cows at the end of the trip wins.</p><br>
-            <p>Churches double your cows, graveyards halve an opponents cows of your choice, and horses count for 10 cows.</p>
+            <p>As you pass a herd of cows, players will should "Those are my cows!" The first one to say it starts
+                counting the cows.</p><br>
+            <p>Once the car passes the cow, it can no longer be counted. Whoever has the most cows at the end of the
+                trip wins.</p><br>
+            <p>Churches double your cows, graveyards halve an opponents cows of your choice, and horses count for 10
+                cows.</p>
             <v-divider></v-divider>
             <h2>Song Game</h2>
             <p>Going around the car, each player will name a song starting with the letter of the alphabet.</p><br>
-            <p>For example, if the first player says "Ain't No Grave", the next player must say a song that starts with "B".</p><br>
+            <p>For example, if the first player says "Ain't No Grave", the next player must say a song that starts with
+                "B".</p><br>
             <p>For extra fun, make a playlist of all the songs your car thinks of.</p>
             <v-divider></v-divider>
             <h2>Fast-Food Frenzy</h2>
@@ -70,7 +74,6 @@
             <v-divider></v-divider>
             <h2>Bingo</h2>
             <p>Save the bingo board to your photos and mark it off there. The board is different each refresh.</p>
-<!--            Center align v-img-->
             <v-img :src="bingo()" max-width="500" contain style="display: block; margin: 0 auto;"></v-img>
         </v-main>
 
@@ -94,10 +97,10 @@
                     {title: 'Car Games', link: '../shared/carGames.html', time: new Date()},
                     {title: 'New Bern 1', link: '../23/down1.html', time: new Date()},
                     {title: 'New Bern 2', link: '../23/down2.html', time: new Date('2023-03-04T12:00:00.000')},
-                    {title: 'New Bern 3', link: '../23/down3.html', time: new Date('2023-03-04T18:00:00.000')},
-                    {title: 'State College 1', link: '../23/up1.html', time: new Date('2023-03-14T10:00:00.000')},
-                    {title: 'State College 2', link: '../23/up2.html', time: new Date('2023-03-14T15:00:00.000')},
-                    {title: 'State College 3', link: '../23/up3.html', time: new Date('2023-03-14T20:00:00.000')},
+                    {title: 'New Bern 3', link: '../23/down3.html', time: new Date('2023-03-04T17:00:00.000')},
+                    {title: 'State College 1', link: '../23/up1.html', time: new Date('2023-03-14T00:00:00.000')},
+                    {title: 'State College 2', link: '../23/up2.html', time: new Date('2023-03-14T12:00:00.000')},
+                    {title: 'State College 3', link: '../23/up3.html', time: new Date('2023-03-14T17:00:00.000')},
                 ],
                 bingoCards: ['../images/bingo/bingo1.png', '../images/bingo/bingo2.png', '../images/bingo/bingo3.png', '../images/bingo/bingo4.png', '../images/bingo/bingo5.png', '../images/bingo/bingo6.png', '../images/bingo/bingo7.png']
             }

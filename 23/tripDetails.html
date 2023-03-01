@@ -17,22 +17,28 @@
         <v-app-bar rounded color="amber" dense>
             <v-app-bar-title>{{ title }}</v-app-bar-title>
             <template v-slot:prepend>
-                <v-app-bar-nav-icon @click="drawer = !drawer"><img src="../images/navsfm_logo.png" style="width:100%; height: auto;" alt="Menu Bar">
+                <v-app-bar-nav-icon @click="drawer = !drawer"><img src="../images/navsfm_logo.png"
+                                                                   style="width:100%; height: auto;" alt="Menu Bar">
                 </v-app-bar-nav-icon>
             </template>
             <template v-slot:append>
                 <v-btn color="black" href="https://open.spotify.com/playlist/4hguY8a0ejffFXtB9U2eGm?si=3b3488f452ab41c3"
-                       target="_blank" style="text-decoration: none">Spotify
+                       target="_blank" style="text-decoration: none;" variant="outlined" :elevation="2">Spotify
                 </v-btn>
             </template>
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" absolute temporary>
             <v-sheet class="d-flex justify-center py-6" color="primary">
-                <a href="../index.html"><v-img src='../images/navsfm_logo.png' max-width="250" contain></v-img></a>
+                <a href="../index.html">
+                    <v-img src='../images/navsfm_logo.png' max-width="250" contain></v-img>
+                </a>
             </v-sheet>
             <v-list nav dense>
                 <v-list-item v-for="link in links" :key="link.title" :to="link.link">
-                    <v-list-item-title v-if="link.title !== title && isPast(link.time)"><a :href="link.link" style="text-decoration: none;">{{ link.title }}</a></v-list-item-title>
+                    <v-list-item-title v-if="link.title !== title && isPast(link.time)"><a :href="link.link"
+                                                                                           style="text-decoration: none;">{{
+                            link.title
+                        }}</a></v-list-item-title>
                     <v-list-item-title v-else-if="isPast(link.time)">{{ link.title }}</v-list-item-title>
                 </v-list-item>
             </v-list>
@@ -57,10 +63,10 @@
                     {title: 'Car Games', link: '../shared/carGames.html', time: new Date()},
                     {title: 'New Bern 1', link: '../23/down1.html', time: new Date()},
                     {title: 'New Bern 2', link: '../23/down2.html', time: new Date('2023-03-04T12:00:00.000')},
-                    {title: 'New Bern 3', link: '../23/down3.html', time: new Date('2023-03-04T18:00:00.000')},
-                    {title: 'State College 1', link: '../23/up1.html', time: new Date('2023-03-14T10:00:00.000')},
-                    {title: 'State College 2', link: '../23/up2.html', time: new Date('2023-03-14T15:00:00.000')},
-                    {title: 'State College 3', link: '../23/up3.html', time: new Date('2023-03-14T20:00:00.000')},
+                    {title: 'New Bern 3', link: '../23/down3.html', time: new Date('2023-03-04T17:00:00.000')},
+                    {title: 'State College 1', link: '../23/up1.html', time: new Date('2023-03-14T00:00:00.000')},
+                    {title: 'State College 2', link: '../23/up2.html', time: new Date('2023-03-14T12:00:00.000')},
+                    {title: 'State College 3', link: '../23/up3.html', time: new Date('2023-03-14T17:00:00.000')},
                 ],
             }
         },

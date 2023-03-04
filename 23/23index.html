@@ -28,11 +28,6 @@
             </template>
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" absolute temporary>
-            <v-sheet class="d-flex justify-center py-6" color="primary">
-                <a href="../index.html">
-                    <v-img src='../images/navsfm_logo.png' max-width="250" contain></v-img>
-                </a>
-            </v-sheet>
             <v-col>
                 <v-row v-for="link in links">
                     <v-btn v-if="link.title !== title && isPast(link.time)" :href="link.link" class="nav ma-1"

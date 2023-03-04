@@ -28,21 +28,22 @@
             </template>
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" absolute temporary>
-            <v-sheet class="d-flex justify-center py-6" color="primary">
-                <a href="../index.html">
-                    <v-img src='../images/navsfm_logo.png' max-width="250" contain></v-img>
-                </a>
-            </v-sheet>
-            <v-list nav dense>
-                <v-list-item v-for="link in links" :key="link.title" :to="link.link">
-                    <v-list-item-title v-if="link.title !== title && isPast(link.time)"><a :href="link.link"
-                                                                                           style="text-decoration: none;">{{
-                            link.title
-                        }}</a></v-list-item-title>
-                    <v-list-item-title v-else-if="isPast(link.time)">{{ link.title }}</v-list-item-title>
-                </v-list-item>
-            </v-list>
+            <v-col>
+                <v-row v-for="link in links">
+                    <v-btn v-if="link.title !== title && isPast(link.time)" :href="link.link" class="nav ma-1"
+                           width="95%" color="blue lighten-3">{{ link.title }}
+                    </v-btn>
+                </v-row>
+            </v-col>
         </v-navigation-drawer>
+        <v-main>
+            <v-card>
+                <v-sheet class="d-flex justify-center" color="amber">
+                    <v-card-title class="text-h5">Trip Schedule</v-card-title>
+                </v-sheet>
+                <img src="../images/IMG_8631.JPG" alt="Trip Schedule" style="width:100%; height: auto;">
+            </v-card>
+        </v-main>
     </v-app>
 </div>
 <script>

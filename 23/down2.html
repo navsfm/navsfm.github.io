@@ -51,6 +51,27 @@
                     <li><p>Cross a state line (Picture? Only if it's safe to do so)</p></li>
                 </ul>
             </v-card>
+            <br/>
+            <v-card :elevation="3">
+                <p>Enjoy this unedited cut of our caravan's radio communications.</p>
+                <h2>Play now in HD:</h2>
+                <div align="center">
+                    <audio controls autoplay>
+                        <source src="audio/NavsFM.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <h3>Click the button below to download the track to your phone:
+                    <br><br>
+                    <div class="row">
+                        <div class="column">
+                            <a href="audio/NavsFM.mp3" download="2023 NavsFM 1 (HD)">
+                                <img src="../images/HD_download.png" alt="HD Download Button" width="80" height="80">
+                            </a>
+                        </div>
+                    </div>
+                </h3>
+            </v-card>
         </v-main>
     </v-app>
 </div>

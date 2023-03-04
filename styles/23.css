@@ -1,0 +1,46 @@
+#app {
+    width: 100%;
+    height: 100%;
+    background-color: #f1f1f1;
+}
+
+v-btn .nav {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding: 0 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+#questionTable {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#questionTable td, #questionTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#questionTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#questionTable tr:hover {
+    background-color: #ddd;
+}
+
+#questionTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0428aa;
+    color: white;
+}

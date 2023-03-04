@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width,user-scalable=yes">
+    <link rel="shortcut icon" type="image/png" href="../images/navsfm_favicon.png">
+    <link rel="stylesheet" type="text/css" href="../styles/base.css">
+    <link rel="stylesheet" type="text/css" href="../styles/23.css">
+    <title>NavsFM - New Bern 2</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/vuetify@3.1.6/dist/vuetify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@3.1.6/dist/vuetify.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <v-app>
+        <v-app-bar rounded color="amber" dense>
+            <v-app-bar-title>{{ title }}</v-app-bar-title>
+            <template v-slot:prepend>
+                <v-app-bar-nav-icon @click="drawer = !drawer"><img src="../images/navsfm_logo.png"
+                                                                   style="width:100%; height: auto;" alt="Menu Logo">
+                </v-app-bar-nav-icon>
+            </template>
+            <template v-slot:append>
+                <v-btn color="black" href="https://open.spotify.com/playlist/4hguY8a0ejffFXtB9U2eGm?si=3b3488f452ab41c3"
+                       target="_blank" style="text-decoration: none;" variant="outlined" :elevation="2">Spotify
+                </v-btn>
+            </template>
+        </v-app-bar>
+        <v-navigation-drawer v-model="drawer" absolute temporary>
+            <v-col>
+                <v-row v-for="link in links">
+                    <v-btn v-if="link.title !== title && isPast(link.time)" :href="link.link" class="nav ma-1"
+                           width="95%" color="blue lighten-3">{{ link.title }}
+                    </v-btn>
+                </v-row>
+            </v-col>
+        </v-navigation-drawer>
+        <v-main>
+            <v-card :elevation="3">
+                <v-sheet color="amber" light>
+                    <v-card-header><h2>WOAAA We're halfway there!</h2></v-card-header>
+                </v-sheet>
+                <p>Maybe not actually, I don't know how far you are in the drive. But we're back with your regularly
+                    scheduled content.</p>
+                <p>Here's a list of things you should accomplish by 6pm.</p><br/>
+                <ul>
+                    <li><p>Take a silly picture</p></li>
+                    <li><p>Spot a plane or helicopter</p></li>
+                    <li><p>Find another Navs car at a gas station or restaurant</p></li>
+                    <li><p>Cross a state line (Picture? Only if it's safe to do so)</p></li>
+                </ul>
+            </v-card>
+        </v-main>
+    </v-app>
+</div>
+<script>
+    const {createApp} = Vue
+    const {createVuetify} = Vuetify
+
+    const vuetify = createVuetify()
+
+    createApp({
+        data() {
+            return {
+                drawer: false,
+                title: 'New Bern 2',
+                links: [
+                    {title: '2023 Home', link: '../23/23index.html', time: new Date()},
+                    {title: 'Trip Details', link: '../23/tripDetails.html', time: new Date()},
+                    {title: 'Break the Ice', link: '../shared/breakTheIce.html', time: new Date()},
+                    {title: 'Car Games', link: '../shared/carGames.html', time: new Date()},
+                    {title: 'New Bern 1', link: '../23/down1.html', time: new Date()},
+                    {title: 'New Bern 2', link: '../23/down2.html', time: new Date('2023-03-04T12:00:00.000')},
+                    {title: 'New Bern 3', link: '../23/down3.html', time: new Date('2023-03-04T17:00:00.000')},
+                    {title: 'State College 1', link: '../23/up1.html', time: new Date('2023-03-14T00:00:00.000')},
+                    {title: 'State College 2', link: '../23/up2.html', time: new Date('2023-03-14T12:00:00.000')},
+                    {title: 'State College 3', link: '../23/up3.html', time: new Date('2023-03-14T17:00:00.000')},
+                ],
+            }
+        },
+        methods: {
+            isPast(time) {
+                return new Date() > time
+            }
+        }
+    }).use(vuetify).mount('#app')
+</script>
+</body>
+</html>

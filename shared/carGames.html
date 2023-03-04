@@ -27,56 +27,184 @@
                 </v-btn>
             </template>
         </v-app-bar>
-        <v-navigation-drawer v-model="drawer" absolute temporary clipped>
-            <v-sheet class="d-flex justify-center py-6" color="primary">
-                <a href="../index.html">
-                    <v-img src='../images/navsfm_logo.png' max-width="250" contain></v-img>
-                </a>
-            </v-sheet>
-            <v-list nav dense>
-                <v-list-item v-for="link in links" :key="link.title" :to="link.link">
-                    <v-list-item-title v-if="link.title !== title && isPast(link.time)"><a :href="link.link" style="text-decoration: none;">{{ link.title }}</a></v-list-item-title>
-                    <v-list-item-title v-else-if="isPast(link.time)">{{ link.title }}</v-list-item-title>
-                </v-list-item>
-            </v-list>
+        <v-navigation-drawer v-model="drawer" absolute temporary>
+            <v-col>
+                <v-row v-for="link in links">
+                    <v-btn v-if="link.title !== title && isPast(link.time)" :href="link.link" class="nav ma-1"
+                           width="95%" color="blue lighten-3">{{ link.title }}
+                    </v-btn>
+                </v-row>
+            </v-col>
         </v-navigation-drawer>
         <v-main>
-            <h2>Tic-Tac-Toe</h2>
-            <p><a href="https://playtictactoe.org">Plat it here!</a></p>
-            <v-divider></v-divider>
-            <h2>License Plate Game</h2>
-            <p>Cooperative - Find a license plate from each state. Bonus points if you find them in alphabetical
-                order.</p>
-            <p><a href="https://plategame.app/">Play it here!</a></p>
-            <v-divider></v-divider>
-            <h2>Alphabet Game</h2>
-            <p>Find something that starts with each letter of the alphabet.</p>
-            <v-divider></v-divider>
-            <h2>Cow Game</h2>
-            <p>In this game, you count cows along your route.</p><br>
-            <p>As you pass a herd of cows, players will should "Those are my cows!" The first one to say it starts
-                counting the cows.</p><br>
-            <p>Once the car passes the cow, it can no longer be counted. Whoever has the most cows at the end of the
-                trip wins.</p><br>
-            <p>Churches double your cows, graveyards halve an opponents cows of your choice, and horses count for 10
-                cows.</p>
-            <v-divider></v-divider>
-            <h2>Song Game</h2>
-            <p>Going around the car, each player will name a song starting with the letter of the alphabet.</p><br>
-            <p>For example, if the first player says "Ain't No Grave", the next player must say a song that starts with
-                "B".</p><br>
-            <p>For extra fun, make a playlist of all the songs your car thinks of.</p>
-            <v-divider></v-divider>
-            <h2>Fast-Food Frenzy</h2>
-            <p>At the start of the trip, everyone picks a fast food restaurant (Not a gas station with food)</p><br>
-            <p>Every time you pass a restaurant, you get a point. Whoever has the most points by a set end wins.</p><br>
-            <p>Ending can be when you refuel, the end of the trip, when you stop to eat, etc...</p>
-            <v-divider></v-divider>
-            <h2>Bingo</h2>
-            <p>Save the bingo board to your photos and mark it off there. The board is different each refresh.</p>
-            <v-img :src="bingo()" max-width="500" contain style="display: block; margin: 0 auto;"></v-img>
+            <v-card>
+                <v-sheet class="d-flex justify-center" color="pink">
+                    <v-card-title>
+                        <h2>Tic-Tac-Toe</h2>
+                    </v-card-title>
+                </v-sheet>
+                <p><a href="https://playtictactoe.org">Plat it here!</a></p>
+            </v-card>
+            <br/>
+            <v-card>
+                <v-sheet class="d-flex justify-center" color="red">
+                    <v-card-title>
+                        <h2>License Plate Game</h2>
+                    </v-card-title>
+                </v-sheet>
+                <div class="pa-6">
+                    <p>Cooperative - Find a license plate from each state. Bonus points if you find them in alphabetical
+                        order.</p>
+                    <p><a href="https://plategame.app/">Play it here!</a></p>
+                </div>
+            </v-card>
+            <br/>
+            <v-card>
+                <v-sheet class="d-flex justify-center" color="orange">
+                    <v-card-title>
+                        <h2>Alphabet Game</h2>
+                    </v-card-title>
+                </v-sheet>
+                <div class="pa-6">
+                    <p>You are trying to find signs that have a word that starts with each letter of the alphabet. Only
+                        one person can use a word from each sign, so it's a race to find the words.</p><br/>
+                    <p> You must go in letter order - any sign will count. The first person to get through the whole
+                        alphabet wins.</p><br/>
+                    <p>So for instance you would start A- Altoona if you see a sign for Altoona, you then move onto B-
+                        BP, C- Car, etc. all the way to Z</p>
+                </div>
+            </v-card>
+            <br/>
+            <v-card>
+                <v-sheet class="d-flex justify-center" color="amber">
+                    <v-card-title>
+                        <h2>Famous People</h2>
+                    </v-card-title>
+                </v-sheet>
+                <div class="pa-6">
+                    <p>You can designate a category for this game like singers, actors, celebrities, athletes, etc.</p>
+                    <br/>
+                    <p>What will happen is you will go around in order and each person will name a famous person- first
+                        and last name. The next person will have to name someone whose first name starts with the same
+                        letter as the last name of the person last named.</p><br/>
+                    <p>If the person on your left says Beyonce Knowles, then you will have to name someone who starts
+                        with a K- Kobe Bryant. The next person would have to name someone with a B and so on.</p><br/>
+                    <p>If you say a double letter like Janet Jackson (2 J's) then it reverses direction back to person
+                        before you.</p>
+                    <p>Any time someone repeats a person, they are out. Keep playing until you have a winner.</p>
+                </div>
+            </v-card>
+            <br/>
+            <v-card>
+                <v-sheet class="d-flex justify-center" color="green">
+                    <v-card-title>
+                        <h2>Never Have I Ever</h2>
+                    </v-card-title>
+                </v-sheet>
+                <div class="pa-6">
+                    <p>This game is best played with another car. One car will come up with something they think some of
+                        the people in the other car have done like skydiving for instance.</p><br/>
+                    <p>Car 2 will let them know how many of their passengers have done the thing (skydiving).</p><br/>
+                    <p>Car 1 will then have to guess who has done the thing (skydiving).</p><br/>
+                    <p>Then it's the other car's turn. Play until...you feel like stopping.</p>
+                    <p>Caravan of 3...get creative.</p>
+                </div>
+            </v-card>
+            <br/>
+            <v-card>
+                <v-sheet class="d-flex justify-center" color="cyan">
+                    <v-card-title>
+                        <h2 style="color: white">Twenty Questions</h2>
+                    </v-card-title>
+                </v-sheet>
+                <div class="pa-6">
+                    <p>One person states they are a person, place or thing. (Or declares animal, vegetable or
+                        mineral.)</p>
+                    <p>Everybody else gets to interrogate the player with 20 questions, which must be answered "Yes" or
+                        "No."</p>
+                </div>
+            </v-card>
+            <br/>
+            <v-card>
+                <v-sheet class="d-flex justify-center" color="teal">
+                    <v-card-title>
+                        <h2 style="color: white">License Plate Lingo</h2>
+                    </v-card-title>
+                </v-sheet>
+                <div class="pa-6">
+                    <p>Make up a phrase using the letters on another car's plate. </p>
+                    <p>Spot a license plate and call out the letters on it. Then everyone tries to come up with a
+                        different phrase using the letters in the order they appear on the license plate as the first
+                        letter of each word.</p>
+                    <p>For instance, KEW could be "kittens eating watermelon" or "kiss every warthog."</p>
+                    <p>When you can't think of any more, look for another license plate and start again!</p>
+                </div>
+            </v-card>
+            <br/>
+            <v-card>
+                <v-sheet class="d-flex justify-center" color="blue">
+                    <v-card-title>
+                        <h2 style="color: white">Cow Game</h2>
+                    </v-card-title>
+                </v-sheet>
+                <div class="pa-6">
+                    <p>In this game, you count cows along your route.</p><br>
+                    <p>As you pass a herd of cows, players will should "Those are my cows!" The first one to say it
+                        starts
+                        counting the cows.</p><br>
+                    <p>Once the car passes the cow, it can no longer be counted. Whoever has the most cows at the end of
+                        the
+                        trip wins.</p><br>
+                    <p>Churches double your cows, graveyards halve an opponents cows of your choice, and horses count
+                        for 10
+                        cows.</p>
+                </div>
+            </v-card>
+            <br/>
+            <v-card>
+                <v-sheet class="d-flex justify-center" color="blue-grey">
+                    <v-card-title>
+                        <h2 style="color: white">Song Game</h2>
+                    </v-card-title>
+                </v-sheet>
+                <div class="pa-6">
+                    <p>Going around the car, each player will name a song starting with the letter of the alphabet.</p>
+                    <br>
+                    <p>For example, if the first player says "Ain't No Grave", the next player must say a song that
+                        starts with
+                        "B".</p><br>
+                    <p>For extra fun, make a playlist of all the songs your car thinks of.</p>
+                </div>
+            </v-card>
+            <br/>
+            <v-card>
+                <v-sheet class="d-flex justify-center" color="indigo">
+                    <v-card-title>
+                        <h2 style="color: white">Fast-Food Frenzy</h2>
+                    </v-card-title>
+                </v-sheet>
+                <div class="pa-6">
+                    <p>At the start of the trip, everyone picks a fast food restaurant (Not a gas station with food)</p>
+                    <br>
+                    <p>Every time you pass a restaurant, you get a point. Whoever has the most points by a set end
+                        wins.</p><br>
+                    <p>Ending can be when you refuel, the end of the trip, when you stop to eat, etc...</p>
+                </div>
+            </v-card>
+            <br/>
+            <v-card>
+                <v-sheet class="d-flex justify-center" color="purple">
+                    <v-card-title>
+                        <h2 style="color: white">Bingo</h2>
+                    </v-card-title>
+                </v-sheet>
+                <div class="pa-6">
+                    <p>Save the bingo board to your photos and mark it off there. The board is different each
+                        refresh.</p>
+                </div>
+                <v-img :src="bingo()" max-width="500" contain style="display: block; margin: 0 auto;"></v-img>
+            </v-card>
         </v-main>
-
     </v-app>
 </div>
 <script>

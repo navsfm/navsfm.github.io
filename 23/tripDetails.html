@@ -43,6 +43,51 @@
                 </v-sheet>
                 <img src="../images/IMG_8631.JPG" alt="Trip Schedule" style="width:100%; height: auto;">
             </v-card>
+            <br/>
+            <v-card>
+                <v-sheet class="d-flex justify-center" color="amber">
+                    <v-card-title class="text-h5">Important Contact Info</v-card-title>
+                </v-sheet>
+                <h2>Baptists on Mission Address</h2>
+                <p>2108 Old Cherry Point Rd, New Bern, NC 28560</p>
+                <p><a href="https://goo.gl/maps/G888M4sCQn11ayJj7">Google Maps Location</a></p>
+                <p>
+                    <a href="https://www.waze.com/en/live-map/directions/us/nc/new-bern/2108-old-cherry-point-rd?place=ChIJlfFdXyTQqIkRJ5dYFrCAjgs">Waze
+                        Location</a></p>
+                <p>
+                    <a href="https://maps.apple.com/?address=2108%20Old%20Cherry%20Point%20Rd,%20New%20Bern,%20NC%20%2028560,%20United%20States&ll=35.068919,-77.019091&q=2108%20Old%20Cherry%20Point%20Rd">Apple
+                        Maps Location</a></p><br/>
+                <table id="questionTable">
+                    <tr>
+                        <th>Name</th>
+                        <th>Contact</th>
+                    </tr>
+                    <tr v-for="c in contacts" :key="contacts.name">
+                        <td class="tableId">{{ c.name }}</td>
+                        <td class="question">{{ c.contact }}</td>
+                    </tr>
+                </table>
+            </v-card>
+            <br/>
+            <v-card>
+                <v-sheet class="d-flex justify-center" color="amber">
+                    <v-card-title class="text-h5">Photos!</v-card-title>
+                </v-sheet>
+                <div class="d-flex justify-center pa-6">
+                    <v-spacer></v-spacer>
+                    <v-btn color="black" href="https://www.dropbox.com/request/c4qQ7NQzadcX7JfqksCX"
+                           target="_blank"
+                           style="text-decoration: none;" variant="outlined" :elevation="2">Photo Upload
+                    </v-btn>
+                    <v-spacer></v-spacer>
+                    <v-btn color="black"
+                           href="https://pennstateoffice365-my.sharepoint.com/:f:/g/personal/jma6277_psu_edu/Eu_O966y30RAuLTXfyl_VQgBS-vUwU8B5fRb1HoV2otdEg?e=ngtJfS"
+                           target="_blank" style="text-decoration: none;" variant="outlined" :elevation="2">
+                        OneDrive
+                    </v-btn>
+                    <v-spacer></v-spacer>
+                </div>
+            </v-card>
         </v-main>
     </v-app>
 </div>
@@ -69,6 +114,11 @@
                     {title: 'State College 2', link: '../23/up2.html', time: new Date('2023-03-14T12:00:00.000')},
                     {title: 'State College 3', link: '../23/up3.html', time: new Date('2023-03-14T17:00:00.000')},
                 ],
+                contacts: [
+                    {name: 'Baptists on Mission Facility', contact: '252-514-8868'},
+                    {name: 'Brad Jones', contact: '570-447-2099'},
+                    {name: 'Joe Violi', contact: '609-319-2438'},
+                ]
             }
         },
         methods: {

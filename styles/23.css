@@ -17,3 +17,30 @@ v-btn .nav {
     display: inline-block;
     margin: 0 auto;
 }
+
+#questionTable {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#questionTable td, #questionTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#questionTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#questionTable tr:hover {
+    background-color: #ddd;
+}
+
+#questionTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0428aa;
+    color: white;
+}

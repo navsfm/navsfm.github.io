@@ -6,7 +6,7 @@
     <link rel="shortcut icon" type="image/png" href="../images/navsfm_favicon.png">
     <link rel="stylesheet" type="text/css" href="../styles/base.css">
     <link rel="stylesheet" type="text/css" href="../styles/23.css">
-    <title>NavsFM - State College 2</title>
+    <title>NavsFM - State College 1</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/vuetify@3.1.6/dist/vuetify.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vuetify@3.1.6/dist/vuetify.min.js"></script>
@@ -38,22 +38,16 @@
         </v-navigation-drawer>
         <v-main>
             <v-card :elevation="3">
-                <v-sheet color="amber" light>
-                    <v-card-header><h2>Leaving for New Bern!</h2></v-card-header>
+                <v-sheet class="d-flex justify-center" color="amber" light>
+                    <v-card-header><h2>Halfway home</h2></v-card-header>
                 </v-sheet>
-                <p>It's time to leave for New Bern!</p>
-                <p>As you get on the road, get to know your car (if you don't already).</p>
-                <h3>Questions to ask:</h3>
-                <ul>
-                    <li><p>Name</p></li>
-                    <li><p>Major</p></li>
-                    <li><p>Favorite color</p></li>
-                    <li><p>Where would you go if Penn State didn't accept you?</p></li>
-                </ul>
-                <br/>
-                <p>Be sure to check out <a href="../shared/carGames.html">Games to play</a> for fun car games and
-                    <a href="../shared/breakTheIce.html">Ice Breakers</a> if you need good conversation starters.</p>
-                <h1>New Bern here we come!</h1>
+                <div class="pa-6">
+                    <p>Just a friendly reminder to upload your photos to the OneDrive link in GroupMe so I can sort through them all on the drive.</p>
+                    <p>At Scout's request, he wants you to talk about the "Signs of the Times."</p><br/>
+                    <p>At Miranda's request, talk about Dance Moms. Or what your favorite accent is?</p><br/>
+                    <p>At Jackson's request, talk about something in your life that shaped your character.</p><br/>
+                    <p style="font-size: 50%">I don't have much for this</p>
+                </div>
             </v-card>
         </v-main>
     </v-app>
@@ -68,7 +62,7 @@
         data() {
             return {
                 drawer: false,
-                title: 'State College 2',
+                title: 'State College 1',
                 links: [
                     {title: '2023 Home', link: '../23/23index.html', time: new Date()},
                     {title: 'Trip Details', link: '../23/tripDetails.html', time: new Date()},

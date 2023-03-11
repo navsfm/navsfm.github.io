@@ -6,7 +6,7 @@
     <link rel="shortcut icon" type="image/png" href="../images/navsfm_favicon.png">
     <link rel="stylesheet" type="text/css" href="../styles/base.css">
     <link rel="stylesheet" type="text/css" href="../styles/23.css">
-    <title>NavsFM - State College 3</title>
+    <title>NavsFM - State College 1</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/vuetify@3.1.6/dist/vuetify.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vuetify@3.1.6/dist/vuetify.min.js"></script>
@@ -38,22 +38,11 @@
         </v-navigation-drawer>
         <v-main>
             <v-card :elevation="3">
-                <v-sheet color="amber" light>
-                    <v-card-header><h2>Leaving for New Bern!</h2></v-card-header>
+                <v-sheet class="d-flex justify-center" color="amber" light>
+                    <v-card-header><h2>Almost home?!</h2></v-card-header>
                 </v-sheet>
-                <p>It's time to leave for New Bern!</p>
-                <p>As you get on the road, get to know your car (if you don't already).</p>
-                <h3>Questions to ask:</h3>
-                <ul>
-                    <li><p>Name</p></li>
-                    <li><p>Major</p></li>
-                    <li><p>Favorite color</p></li>
-                    <li><p>Where would you go if Penn State didn't accept you?</p></li>
-                </ul>
-                <br/>
-                <p>Be sure to check out <a href="../shared/carGames.html">Games to play</a> for fun car games and
-                    <a href="../shared/breakTheIce.html">Ice Breakers</a> if you need good conversation starters.</p>
-                <h1>New Bern here we come!</h1>
+                <div class="pa-6">
+                </div>
             </v-card>
         </v-main>
     </v-app>
@@ -68,7 +57,7 @@
         data() {
             return {
                 drawer: false,
-                title: 'State College 3',
+                title: 'State College 1',
                 links: [
                     {title: '2023 Home', link: '../23/23index.html', time: new Date()},
                     {title: 'Trip Details', link: '../23/tripDetails.html', time: new Date()},
